@@ -1,0 +1,11 @@
+{
+	"linter": {
+		"rules": {
+			"a11y": {
+				"recommended": false
+			},
+			"correctness": { "useJsxKeyInIterable": "off" },
+			"style": { "noNonNullAssertion": "off" }
+		}
+	}
+}
