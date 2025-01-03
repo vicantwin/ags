@@ -1,0 +1,107 @@
+@use "sass:color";
+@use "./styles/applauncher.scss";
+
+$bg: #212223;
+$fg: #f1f1f1;
+$accent: #378df7;
+$radius: 10px;
+
+window.Bar {
+  border: none;
+  box-shadow: none;
+  background-color: transparent;
+  color: $fg;
+  font-family: "SpaceMono Nerd Font";
+  font-size: 1.1rem;
+  font-weight: bold;
+
+  .rounded-border {
+    background-color: $bg;
+    padding: 0 10px;
+    border-radius: $radius;
+    border: 1px solid white;
+    margin: 0 10px;
+  }
+
+  .accent {
+    color: $accent;
+  }
+
+  label {
+    margin: 0 8px;
+  }
+
+  .Workspaces {
+    padding: 0 6px;
+
+    button {
+      all: unset;
+      background-color: transparent;
+      border-radius: $radius;
+
+      &:hover label {
+        background-color: color.adjust($fg, $alpha: -0.84);
+        border-color: color.adjust($accent, $alpha: -0.8);
+      }
+
+      &:active label {
+        background-color: color.adjust($fg, $alpha: -0.8);
+      }
+    }
+
+    label {
+      transition: 200ms;
+      padding: 0 8px;
+      margin: 2px;
+      border-radius: $radius;
+      border: 1pt solid transparent;
+    }
+
+    .focused label {
+      color: $accent;
+      border-color: $accent;
+    }
+  }
+
+  .SysTray {
+    background-color: transparent;
+    margin-right: 8px;
+
+    button {
+      background-color: transparent;
+      padding: 0 4px;
+    }
+  }
+
+  .FocusedClient {
+    color: $accent;
+  }
+
+  .Media .Cover {
+    min-height: 1.2em;
+    min-width: 1.2em;
+    border-radius: $radius;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .Battery {
+    * {
+      all: unset;
+    }
+
+    icon {
+      margin-right: 0.6em;
+    }
+  }
+
+  .AudioSlider {
+    * {
+      all: unset;
+    }
+
+    icon {
+      margin-right: 0.6em;
+    }
+  }
+}

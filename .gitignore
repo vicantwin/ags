@@ -1,0 +1,4 @@
+@girs/
+.direnv/
+.envrc
+node_modules/
